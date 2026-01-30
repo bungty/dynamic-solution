@@ -1459,7 +1459,7 @@ window.addEventListener("scroll", startCounter);
 </footer>
 <style>
   .DYNAMIC-footer {
- background: var(--dark-bg);
+      background: var(--dark-bg);
   color: #cfd3e0;
   font-size: 14px;
 }
@@ -1549,23 +1549,34 @@ window.addEventListener("scroll", startCounter);
 </button>
 
 <style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* prevent horizontal scroll */
+  }
+
   #scrollTopBtn {
     position: fixed;
-    bottom: calc(15px + env(safe-area-inset-bottom, 0px)); /* safe from bottom on phones with gestures */
-    right: calc(15px + env(safe-area-inset-right, 0px));    /* safe from right edge */
-    width: clamp(35px, 8vw, 50px);   /* fluid width */
-    height: clamp(35px, 8vw, 50px);  /* fluid height */
+    /* safe spacing but ensure it never exceeds viewport */
+    bottom: 1.5rem; 
+    right: 1.5rem;  
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     background: #fbbf24;
     color: #000;
     border: none;
-    font-size: clamp(14px, 4vw, 22px); /* fluid font size */
+    font-size: 20px;
     font-weight: bold;
     cursor: pointer;
     display: none;
     box-shadow: 0 6px 18px rgba(0,0,0,0.3);
     transition: 0.3s ease, transform 0.2s ease;
     z-index: 9999;
+
+    /* Prevent overflow on small devices */
+    max-width: calc(100vw - 1.5rem);
+    max-height: calc(100vh - 1.5rem);
   }
 
   #scrollTopBtn:hover {
