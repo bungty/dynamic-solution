@@ -838,62 +838,120 @@ input[type=range]::-webkit-slider-thumb {
 }
 </style>
 
-<section class="finance-stats-section py-5">
+<section class="finance-stats-section py-5" id="financeCounter">
   <div class="container">
     <div class="row text-center">
 
       <div class="col-md-3 mb-4">
-        <h2 class="finance-stat-number">1000Cr+</h2>
-        <div class="finance-stat-label">Worth Loan disbursed</div>
+        <h2 class="finance-stat-number counter" data-target="1000">0</h2>
+        <div class="finance-stat-label">Cr+ Loan Disbursed</div>
       </div>
 
       <div class="col-md-3 mb-4">
-        <h2 class="finance-stat-number">5000+</h2>
-        <div class="finance-stat-label">Partners</div>
+        <h2 class="finance-stat-number counter" data-target="5000">0</h2>
+        <div class="finance-stat-label">Trusted Partners</div>
       </div>
 
       <div class="col-md-3 mb-4">
-        <h2 class="finance-stat-number">40+</h2>
-        <div class="finance-stat-label">Products</div>
+        <h2 class="finance-stat-number counter" data-target="40">0</h2>
+        <div class="finance-stat-label">Financial Products</div>
       </div>
 
       <div class="col-md-3 mb-4">
-        <h2 class="finance-stat-number">31000</h2>
-        <div class="finance-stat-label">Satisfied Customers</div>
+        <h2 class="finance-stat-number counter" data-target="31000">0</h2>
+        <div class="finance-stat-label">Happy Customers</div>
       </div>
 
     </div>
   </div>
 </section>
+
 <style>
-    .finance-stats-section {
-  background: radial-gradient(circle at top, #1d1f2a, #0c0f1a);
+  .finance-stats-section {
+  background: linear-gradient(135deg, #0f172a, #020617);
   background-image: url('images/slider-1-1.jpg');
-  color: #fff;
   background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #fff;
+}
+
+.finance-stats-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.finance-stats-section .container {
+  position: relative;
+  z-index: 2;
 }
 
 .finance-stat-number {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 12px;
+  font-size: 46px;
+  font-weight: 800;
+  color: #fbbf24;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
 }
 
 .finance-stat-label {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 20px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.3);
   display: inline-block;
-  padding: 6px 18px;
-  border: 1px solid #f39c12;
-  color: #fff;
-  font-size: 14px;
-  border-radius: 2px;
   transition: 0.3s ease;
 }
 
 .finance-stat-label:hover {
-  background: #f39c12;
+  background: #fbbf24;
   color: #000;
+  transform: translateY(-2px);
 }
 </style>
+<script>
+let counted = false;
+
+function startCounter() {
+  if (counted) return;
+
+  const section = document.querySelector("#financeCounter");
+  const sectionTop = section.getBoundingClientRect().top;
+  const screenHeight = window.innerHeight;
+
+  if (sectionTop < screenHeight - 100) {
+    counted = true;
+
+    const counters = document.querySelectorAll(".counter");
+
+    counters.forEach(counter => {
+      counter.innerText = "0";
+
+      const updateCounter = () => {
+        const target = +counter.getAttribute("data-target");
+        const current = +counter.innerText;
+        const increment = target / 120;
+
+        if (current < target) {
+          counter.innerText = Math.ceil(current + increment);
+          setTimeout(updateCounter, 20);
+        } else {
+          counter.innerText = target + "+";
+        }
+      };
+
+      updateCounter();
+    });
+  }
+}
+
+window.addEventListener("scroll", startCounter);
+</script>
+
+
 
 
 <section class="flap-partner-section py-5">
@@ -954,8 +1012,8 @@ input[type=range]::-webkit-slider-thumb {
 
         <!-- STORE BUTTONS -->
         <div class="flap-store-buttons mt-4">
-          <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"></a>
-          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"></a>
+          <a href="#"><img src="images/download-on-the-app-store.svg"></a>
+          <a href="#"><img src="images/Google_Play_Store_badge_EN.svg"></a>
         </div>
 
       </div>
