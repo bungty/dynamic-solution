@@ -1526,6 +1526,57 @@ window.addEventListener("scroll", startCounter);
 }
 </style>
 
+<button id="scrollTopBtn" title="Go to top">
+  ↑
+</button>
+
+<style>
+  #scrollTopBtn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #fbbf24;
+  color: #000;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  transition: 0.3s ease;
+  z-index: 9999;
+}
+
+#scrollTopBtn:hover {
+  background: #fff;
+  transform: translateY(-3px);
+}
+</style>
+<script>
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+// Show button on scroll
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+});
+
+// Scroll to top on click
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+</script>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
