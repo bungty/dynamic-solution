@@ -1551,49 +1551,26 @@ window.addEventListener("scroll", startCounter);
 <style>
   #scrollTopBtn {
     position: fixed;
-    bottom: 20px; /* safe distance from bottom */
-    right: 20px;  /* safe distance from right */
-    width: 45px;
-    height: 45px;
+    bottom: calc(15px + env(safe-area-inset-bottom, 0px)); /* safe from bottom on phones with gestures */
+    right: calc(15px + env(safe-area-inset-right, 0px));    /* safe from right edge */
+    width: clamp(35px, 8vw, 50px);   /* fluid width */
+    height: clamp(35px, 8vw, 50px);  /* fluid height */
     border-radius: 50%;
     background: #fbbf24;
     color: #000;
     border: none;
-    font-size: 20px;
+    font-size: clamp(14px, 4vw, 22px); /* fluid font size */
     font-weight: bold;
     cursor: pointer;
     display: none;
     box-shadow: 0 6px 18px rgba(0,0,0,0.3);
     transition: 0.3s ease, transform 0.2s ease;
     z-index: 9999;
-    min-width: 40px;
-    min-height: 40px;
   }
 
   #scrollTopBtn:hover {
     background: #fff;
     transform: translateY(-3px);
-  }
-
-  /* Fully responsive for small devices */
-  @media (max-width: 500px) {
-    #scrollTopBtn {
-      width: 40px;
-      height: 40px;
-      font-size: 16px;
-      right: 15px;  /* increase spacing from edge */
-      bottom: 15px; /* increase spacing from bottom */
-    }
-  }
-
-  @media (max-width: 360px) {
-    #scrollTopBtn {
-      width: 35px;
-      height: 35px;
-      font-size: 14px;
-      right: 10px;  /* enough safe margin */
-      bottom: 10px; 
-    }
   }
 </style>
 
