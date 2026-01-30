@@ -1551,47 +1551,26 @@ window.addEventListener("scroll", startCounter);
 <style>
   #scrollTopBtn {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 45px;
-    height: 45px;
+    bottom: max(1.5rem, 3%); /* distance from bottom, adjusts for small screens */
+    right: max(1.5rem, 3%);  /* distance from right, adjusts for small screens */
+    width: clamp(35px, 5vw, 50px);   /* responsive width */
+    height: clamp(35px, 5vw, 50px);  /* responsive height */
     border-radius: 50%;
     background: #fbbf24;
     color: #000;
     border: none;
-    font-size: 20px;
+    font-size: clamp(16px, 3vw, 22px); /* responsive font-size */
     font-weight: bold;
     cursor: pointer;
     display: none;
     box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-    transition: 0.3s ease;
+    transition: 0.3s ease, transform 0.2s ease;
     z-index: 9999;
   }
 
   #scrollTopBtn:hover {
     background: #fff;
     transform: translateY(-3px);
-  }
-
-  /* Mobile responsiveness */
-  @media (max-width: 768px) {
-    #scrollTopBtn {
-      width: 40px;
-      height: 40px;
-      font-size: 18px;
-      bottom: 20px;
-      right: 20px; /* keeps it slightly away from the edge */
-    }
-  }
-
-  @media (max-width: 480px) {
-    #scrollTopBtn {
-      width: 35px;
-      height: 35px;
-      font-size: 16px;
-      bottom: 15px;
-      right: 15px; /* ensure it's not cut off */
-    }
   }
 </style>
 
