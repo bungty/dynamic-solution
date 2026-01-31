@@ -534,91 +534,86 @@
 
 
 
-<section class="offering-section py-5 text-center">
-  <div class="container">
+<section class="offering-section py-5">
+  <div class="container text-center">
 
     <!-- Section Title -->
-    <h3 class="fw-bold mb-5">What We’re Offering</h3>
+    <h2 class="fw-bold mb-2">Our Loan Services</h2>
+    <p class="text-muted mb-4">
+      Secured & Unsecured Loans — All Types | Also Dealing in IPO Launching
+    </p>
 
     <div class="row g-4 justify-content-center">
 
-      <!-- Card 1 -->
-      <div class="col-md-3 col-sm-6">
-        <div class="offer-card">
-          <div class="image-box">
-            <img src="images/Personal-Loans.jpg" class="img-fluid">
-            <div class="icon-badge">
-              💼
-            </div>
-          </div>
-          <h6 class="mt-3 fw-semibold">Personal Loan</h6>
-        </div>
-      </div>
+      <!-- Card Template -->
+      <script>
+        const loans = [
+          ["Personal Loan", "Personal-Loans.jpg", "💼"],
+          ["Business Loan", "Business Loan.webp", "💰"],
+          ["Loan Against Property", "Loan Against Property.webp", "🏠"],
+          ["Education Loan", "Education Loan.webp", "🎓"],
+          ["Working Capital", "Working Capital.webp", "📊"],
+          ["Home Loan", "Home Loan.jpg", "🏡"],
+          ["Auto Loan", "Auto Loan.webp", "🚗"],
+          ["Used Car Loan", "Used Car Loan.jpeg", "🚙"],
+          ["Overdraft", "Overdraft.png", "💳"],
+          ["CGTMSE Loan", "CGTMSE Loan.jpg", "🏦"],
+          ["Project Funding", "Project Funding.webp", "📈"]
+        ];
 
-      <!-- Card 2 -->
-      <div class="col-md-3 col-sm-6">
-        <div class="offer-card">
-          <div class="image-box">
-            <img src="images/Business Loan.webp" class="img-fluid">
-            <div class="icon-badge">
-              💰
+        document.write(loans.map(item => `
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="offer-card">
+              <div class="image-box">
+                <img src="images/${item[1]}" class="img-fluid">
+                <span class="icon-badge">${item[2]}</span>
+              </div>
+              <h6>${item[0]}</h6>
             </div>
           </div>
-          <h6 class="mt-3 fw-semibold">Business Loan</h6>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="col-md-3 col-sm-6">
-        <div class="offer-card">
-          <div class="image-box">
-             <img src="images/Loan Against Property.webp" class="img-fluid">
-            <div class="icon-badge">
-              🏠
-            </div>
-          </div>
-          <h6 class="mt-3 fw-semibold">Loan Against Property</h6>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="col-md-3 col-sm-6">
-        <div class="offer-card">
-          <div class="image-box">
-             <img src="images/Education Loan.webp" class="img-fluid">
-            <div class="icon-badge">
-              🎓
-            </div>
-          </div>
-          <h6 class="mt-3 fw-semibold">Education Loan</h6>
-        </div>
-      </div>
+        `).join(""));
+      </script>
 
     </div>
   </div>
 </section>
+
 <style>
-    .offering-section {
-  background: #fff;
+.offering-section {
+  background: linear-gradient(to bottom, #f8fafc, #ffffff);
 }
 
-/* Card Image Box */
+/* Card */
+.offer-card {
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  padding-bottom: 18px;
+  transition: 0.35s ease;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+  cursor: pointer;
+}
+
+.offer-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+}
+
+/* Image */
 .offer-card .image-box {
   position: relative;
   overflow: hidden;
-  border-radius: 6px;
 }
 
 .offer-card img {
   width: 100%;
-  height: 180px;
+  height: 185px;
   object-fit: cover;
-  transition: 0.3s ease;
+  transition: 0.35s ease;
 }
 
-/* Hover zoom */
 .offer-card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 /* Icon Badge */
@@ -628,17 +623,24 @@
   left: 50%;
   transform: translateX(-50%);
   background: white;
-  color: var(--brand-yellow);
-  width: 46px;
-  height: 46px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  font-size: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+/* Title */
+.offer-card h6 {
+  margin-top: 26px;
+  font-weight: 700;
+  font-size: 15px;
 }
 </style>
+
   
 <section class="loan-calc-section py-5">
   <div class="container">
