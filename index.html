@@ -128,16 +128,16 @@
       <!-- Navbar links -->
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Who We Are</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">What We Offer</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Get in Touch</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Check Eligibility</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Franchise</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="who-we-are.html">Who We Are</a></li>
+          <li class="nav-item"><a class="nav-link" href="what-we-offer.html">What We Offer</a></li>
+          <li class="nav-item"><a class="nav-link" href="get-in-touch.html">Get in Touch</a></li>
+          <li class="nav-item"><a class="nav-link" href="check-eligibility.html">Check Eligibility</a></li>
+          <li class="nav-item"><a class="nav-link" href="franchise.html">Franchise</a></li>
         </ul>
         <div class="d-flex">
-          <a href="#" class="btn btn-request">Request Loan</a>
-          <a href="#" class="btn btn-partner">Become Our Partner</a>
+          <a href="request-loan.html" class="btn btn-request">Request Loan</a>
+          <a href="become-our-partner.html" class="btn btn-partner">Become Our Partner</a>
         </div>
       </div>
     </div>
@@ -536,43 +536,122 @@
 
 <section class="offering-section py-5">
   <div class="container text-center">
-
     <!-- Section Title -->
     <h2 class="fw-bold mb-2">Our Loan Services</h2>
     <p class="text-muted mb-4">
       Secured & Unsecured Loans — All Types | Also Dealing in IPO Launching
     </p>
-
     <div class="row g-4 justify-content-center">
 
-      <!-- Card Template -->
-      <script>
-        const loans = [
-          ["Personal Loan", "Personal-Loans.jpg", "💼"],
-          ["Business Loan", "Business Loan.webp", "💰"],
-          ["Loan Against Property", "Loan Against Property.webp", "🏠"],
-          ["Education Loan", "Education Loan.webp", "🎓"],
-          ["Working Capital", "Working Capital.webp", "📊"],
-          ["Home Loan", "Home Loan.jpg", "🏡"],
-          ["Auto Loan", "Auto Loan.webp", "🚗"],
-          ["Used Car Loan", "Used Car Loan.jpeg", "🚙"],
-          ["Overdraft", "Overdraft.png", "💳"],
-          ["CGTMSE Loan", "CGTMSE Loan.jpg", "🏦"],
-          ["Project Funding", "Project Funding.webp", "📈"]
-        ];
-
-        document.write(loans.map(item => `
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="offer-card">
-              <div class="image-box">
-                <img src="images/${item[1]}" class="img-fluid">
-                <span class="icon-badge">${item[2]}</span>
-              </div>
-              <h6>${item[0]}</h6>
-            </div>
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="offer-card">
+          <div class="image-box">
+            <img src="images/Personal-Loans.jpg" class="img-fluid" alt="Personal Loan">
+            <span class="icon-badge">💼</span>
           </div>
-        `).join(""));
-      </script>
+          <h6>Personal Loan</h6>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="offer-card">
+          <div class="image-box">
+            <img src="images/Business Loan.webp" class="img-fluid" alt="Business Loan">
+            <span class="icon-badge">💰</span>
+          </div>
+          <h6>Business Loan</h6>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="offer-card">
+          <div class="image-box">
+            <img src="images/Loan Against Property.webp" class="img-fluid" alt="Loan Against Property">
+            <span class="icon-badge">🏠</span>
+          </div>
+          <h6>Loan Against Property</h6>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="offer-card">
+          <div class="image-box">
+            <img src="images/Education Loan.webp" class="img-fluid" alt="Education Loan">
+            <span class="icon-badge">🎓</span>
+          </div>
+          <h6>Education Loan</h6>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="offer-card">
+          <div class="image-box">
+            <img src="images/Working Capital.webp" class="img-fluid" alt="Working Capital">
+            <span class="icon-badge">📊</span>
+          </div>
+          <h6>Working Capital</h6>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="offer-card">
+          <div class="image-box">
+            <img src="images/Home Loan.jpg" class="img-fluid" alt="Home Loan">
+            <span class="icon-badge">🏡</span>
+          </div>
+          <h6>Home Loan</h6>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="offer-card">
+          <div class="image-box">
+            <img src="images/Auto Loan.webp" class="img-fluid" alt="Auto Loan">
+            <span class="icon-badge">🚗</span>
+          </div>
+          <h6>Auto Loan</h6>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="offer-card">
+          <div class="image-box">
+            <img src="images/Used Car Loan.jpeg" class="img-fluid" alt="Used Car Loan">
+            <span class="icon-badge">🚙</span>
+          </div>
+          <h6>Used Car Loan</h6>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="offer-card">
+          <div class="image-box">
+            <img src="images/Overdraft.png" class="img-fluid" alt="Overdraft">
+            <span class="icon-badge">💳</span>
+          </div>
+          <h6>Overdraft</h6>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="offer-card">
+          <div class="image-box">
+            <img src="images/CGTMSE Loan.jpg" class="img-fluid" alt="CGTMSE Loan">
+            <span class="icon-badge">🏦</span>
+          </div>
+          <h6>CGTMSE Loan</h6>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="offer-card">
+          <div class="image-box">
+            <img src="images/Project Funding.webp" class="img-fluid" alt="Project Funding">
+            <span class="icon-badge">📈</span>
+          </div>
+          <h6>Project Funding</h6>
+        </div>
+      </div>
 
     </div>
   </div>
