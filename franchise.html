@@ -144,52 +144,75 @@
 
 
 
-<section class="loan-calc-section py-5">
+<section class="franchise-section py-5">
   <div class="container">
 
     <!-- Heading -->
-    <div class="text-center mb-4">
-      <small class="text-warning fw-bold">|| CALCULATE YOUR RATE ||</small>
-      <h3 class="fw-bold mt-2">How much loan amount do you need?</h3>
+    <div class="text-center mb-5">
+      <small class="text-warning fw-bold">|| FRANCHISE OPPORTUNITY ||</small>
+      <h3 class="fw-bold mt-2">Become Our Franchise Partner & Start Earning Today!</h3>
+      <p class="text-muted lead">Join our growing network | Zero/Low Investment | High Commissions | Pan-India Support</p>
     </div>
 
-    <div class="row align-items-center">
+    <div class="row justify-content-center">
 
-      <!-- Calculator Box (now full width on larger screens since image is removed) -->
+      <!-- Franchise Info Box (centered, full width on lg) -->
       <div class="col-lg-8 mx-auto">
-        <div class="calc-box p-4 shadow-sm">
+        <div class="franchise-box p-4 shadow-sm bg-white rounded">
 
-          <!-- Amount Slider -->
-          <label class="fw-semibold">Loan Amount</label>
-          <input type="range" id="amount" min="1000" max="40000" value="16000" class="form-range">
-          <div class="d-flex justify-content-between small">
-            <span>₹1000</span>
-            <strong id="amountValue">₹16000</strong>
-            <span>₹40000</span>
+          <h4 class="fw-bold mb-4 text-center">Why Choose Our Franchise Model?</h4>
+
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="benefit-item d-flex align-items-start">
+                <span class="badge bg-warning text-dark me-3 fs-4">₹</span>
+                <div>
+                  <h6 class="fw-bold">High Commission Earnings</h6>
+                  <p class="mb-0">Earn attractive payouts (0.5%–2%+ per loan) on Personal, Business, Home, LAP & more loans.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="benefit-item d-flex align-items-start">
+                <span class="badge bg-warning text-dark me-3 fs-4">0</span>
+                <div>
+                  <h6 class="fw-bold">Zero or Low Investment</h6>
+                  <p class="mb-0">Start with minimal/no setup cost – perfect for entrepreneurs & existing loan agents.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="benefit-item d-flex align-items-start">
+                <span class="badge bg-warning text-dark me-3 fs-4">🛡️</span>
+                <div>
+                  <h6 class="fw-bold">Full Support & Training</h6>
+                  <p class="mb-0">Dedicated team, marketing materials, lead generation & tech support included.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="benefit-item d-flex align-items-start">
+                <span class="badge bg-warning text-dark me-3 fs-4">🌐</span>
+                <div>
+                  <h6 class="fw-bold">Pan-India Opportunity</h6>
+                  <p class="mb-0">Work from anywhere – refer clients across cities & build your sub-network.</p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <!-- Tenure Slider -->
-          <label class="fw-semibold mt-4">Tenure</label>
-          <input type="range" id="months" min="1" max="12" value="7" class="form-range">
-          <div class="d-flex justify-content-between small">
-            <span>1 Month</span>
-            <strong id="monthsValue">7</strong>
-            <span>12 Months</span>
+          <div class="text-center mt-5">
+            <p class="fw-bold mb-3">Ready to be your own boss in the loan industry?</p>
+            <a href="#franchise-form" class="btn btn-warning btn-lg px-5 py-3">
+              Apply for Franchise Now
+            </a>
           </div>
 
-          <!-- Result -->
-          <div class="mt-4 result-row">
-            <p>Pay Monthly <span id="monthlyPay">₹2628</span></p>
-            <p>Term of Use <span id="termValue">7 Months</span></p>
-            <p>Total Pay Back <span id="totalPay">₹18400</span></p>
-          </div>
-
-          <button class="btn btn-warning mt-3 px-4">
-            Apply For Loan
-          </button>
-
-          <small class="d-block mt-3 text-muted">
-            *These calculators are provided only as general self-help planning tools.
+          <small class="d-block mt-4 text-muted text-center">
+            *This is an indicative opportunity. Final terms depend on profile verification & agreement. No targets or hidden fees.
           </small>
 
         </div>
@@ -200,29 +223,37 @@
 </section>
 
 <style>
-  .loan-calc-section {
+  .franchise-section {
     background: #f9f9f9;
   }
 
-  /* Calculator Card */
-  .calc-box {
-    background: white;
+  .franchise-box {
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .benefit-item {
+    background: #fffaf0;
+    padding: 20px;
     border-radius: 8px;
+    height: 100%;
+    transition: transform 0.3s;
   }
 
-  /* Range color - assuming you have --brand-yellow defined elsewhere */
-  input[type=range]::-webkit-slider-thumb {
-    background: var(--brand-yellow);
+  .benefit-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   }
 
-  /* Result layout */
-  .result-row p {
+  .badge {
+    min-width: 50px;
+    height: 50px;
     display: flex;
-    justify-content: space-between;
-    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem !important;
   }
-
-  /* Removed .satisfied-badge styles since badge is gone */
 </style>
 
 

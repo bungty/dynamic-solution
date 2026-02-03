@@ -149,102 +149,153 @@
 
     <!-- Heading -->
     <div class="text-center mb-4">
-      <small class="text-warning fw-bold">|| CALCULATE YOUR RATE ||</small>
-      <h3 class="fw-bold mt-2">How much loan amount do you need?</h3>
+      <small class="text-warning fw-bold">|| CHECK YOUR ELIGIBILITY ||</small>
+      <h3 class="fw-bold mt-2">Are You Eligible for a Loan?</h3>
+      <p class="text-muted">Enter basic details to see if you qualify — Instant & Free Check!</p>
     </div>
 
     <div class="row align-items-center">
 
-      <!-- Calculator Box -->
+      <!-- Eligibility Form -->
       <div class="col-lg-6">
         <div class="calc-box p-4 shadow-sm">
 
-          <!-- Amount Slider -->
-          <label class="fw-semibold">Loan Amount</label>
-          <input type="range" id="amount" min="1000" max="40000" value="16000" class="form-range">
-          <div class="d-flex justify-content-between small">
-            <span>₹1000</span>
-            <strong id="amountValue">₹16000</strong>
-            <span>₹40000</span>
-          </div>
+          <form id="eligibilityForm">
 
-          <!-- Tenure Slider -->
-          <label class="fw-semibold mt-4">Tenure</label>
-          <input type="range" id="months" min="1" max="12" value="7" class="form-range">
-          <div class="d-flex justify-content-between small">
-            <span>1 Month</span>
-            <strong id="monthsValue">7</strong>
-            <span>12 Months</span>
-          </div>
+            <!-- Monthly Income -->
+            <div class="mb-3">
+              <label for="income" class="fw-semibold">Monthly Income (₹)</label>
+              <input type="number" id="income" class="form-control" min="10000" placeholder="e.g. 25000" required>
+              <small class="form-text text-muted">Minimum usually ₹15,000–₹25,000 depending on lender</small>
+            </div>
 
-          <!-- Result -->
-          <div class="mt-4 result-row">
-            <p>Pay Monthly <span id="monthlyPay">₹2628</span></p>
-            <p>Term of Use <span id="termValue">7 Months</span></p>
-            <p>Total Pay Back <span id="totalPay">₹18400</span></p>
-          </div>
+            <!-- Age -->
+            <div class="mb-3">
+              <label for="age" class="fw-semibold">Your Age</label>
+              <input type="number" id="age" class="form-control" min="18" max="70" placeholder="e.g. 28" required>
+              <small class="form-text text-muted">Typically 21–60 years for salaried</small>
+            </div>
 
-          <button class="btn btn-warning mt-3 px-4">
-            Apply For Loan
-          </button>
+            <!-- Employment Type -->
+            <div class="mb-3">
+              <label for="employment" class="fw-semibold">Employment Type</label>
+              <select id="employment" class="form-select" required>
+                <option value="">Select...</option>
+                <option value="salaried">Salaried (Private/Govt/MNC)</option>
+                <option value="self-employed">Self-Employed/Business Owner</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <!-- Credit Score (optional but important) -->
+            <div class="mb-3">
+              <label for="creditScore" class="fw-semibold">CIBIL Credit Score (optional)</label>
+              <input type="number" id="creditScore" class="form-control" min="300" max="900" placeholder="e.g. 720">
+              <small class="form-text text-muted">Higher score (650+) = Better chance & lower interest</small>
+            </div>
+
+            <!-- Result Area -->
+            <div class="mt-4 result-row" id="resultArea" style="display: none;">
+              <p class="fw-bold text-success">Congratulations! You appear eligible.</p>
+              <p>You may qualify for up to ₹5–15 Lakh (subject to full verification)</p>
+              <p>Next step: Submit documents for instant approval!</p>
+            </div>
+
+            <button type="button" class="btn btn-warning mt-3 px-4" onclick="checkEligibility()">
+              Check Eligibility Now
+            </button>
+
+          </form>
 
           <small class="d-block mt-3 text-muted">
-            *These calculators are provided only as general self-help planning tools.
+            *This is an indicative check only. Final eligibility depends on lender verification.
           </small>
 
         </div>
       </div>
 
-      <!-- Image + Badge -->
+      <!-- Image + Badge (kept for visual appeal) -->
       <div class="col-lg-6 position-relative text-center">
-        <img src="images/Loan Against Property.webp" class="img-fluid rounded">
+        <img src="images/Loan Against Property.webp" class="img-fluid rounded" alt="Loan Eligibility">
 
         <div class="satisfied-badge">
           <strong>95%</strong><br>
-          Satisfied Customers
+          Approval Rate
         </div>
       </div>
 
     </div>
   </div>
 </section>
+
 <style>
-    .loan-calc-section {
-  background: #f9f9f9;
-}
+  .loan-calc-section {
+    background: #f9f9f9;
+  }
 
-/* Calculator Card */
-.calc-box {
-  background: white;
-  border-radius: 8px;
-}
+  /* Form Card */
+  .calc-box {
+    background: white;
+    border-radius: 8px;
+  }
 
-/* Range color */
-input[type=range]::-webkit-slider-thumb {
-  background: var(--brand-yellow);
-}
+  /* Input styling */
+  .form-control, .form-select {
+    border-radius: 6px;
+    padding: 10px 15px;
+  }
 
-/* Result layout */
-.result-row p {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 600;
-}
+  /* Result layout */
+  .result-row {
+    padding: 15px;
+    background: #f0fff0;
+    border-radius: 6px;
+    border: 1px solid #c3e6cb;
+  }
 
-/* Badge Overlay */
-.satisfied-badge {
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
-  background: var(--brand-yellow);
-  color: white;
-  padding: 18px 20px;
-  border-radius: 6px;
-  font-size: 16px;
-  font-weight: 700;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
+  /* Badge Overlay */
+  .satisfied-badge {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    background: var(--brand-yellow);
+    color: white;
+    padding: 18px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  }
 </style>
+
+<script>
+  // Simple mock JS for demo (replace with real logic or backend call later)
+  function checkEligibility() {
+    const income = parseInt(document.getElementById('income').value) || 0;
+    const age = parseInt(document.getElementById('age').value) || 0;
+    const employment = document.getElementById('employment').value;
+    const credit = parseInt(document.getElementById('creditScore').value) || 0;
+
+    const resultArea = document.getElementById('resultArea');
+
+    if (income >= 15000 && age >= 21 && age <= 60 && employment && employment !== 'other') {
+      // Basic pass condition
+      resultArea.innerHTML = `
+        <p class="fw-bold text-success">Great! You seem eligible.</p>
+        <p>Estimated loan range: ₹1 Lakh – ₹10 Lakh+ (based on profile)</p>
+        <p>High chance with good credit & stable income.</p>
+      `;
+      resultArea.style.display = 'block';
+    } else {
+      resultArea.innerHTML = `
+        <p class="fw-bold text-danger">Eligibility not met yet.</p>
+        <p>Please check: Income, Age, Employment type or improve credit score.</p>
+        <p>Try increasing income input or contact us for options!</p>
+      `;
+      resultArea.style.display = 'block';
+    }
+  }
+</script>
 
 
 <footer class="DYNAMIC-footer">

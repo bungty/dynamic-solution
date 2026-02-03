@@ -153,28 +153,86 @@
   <div class="container-fluid p-0">
     <div class="row g-0 align-items-stretch">
 
-      <!-- LEFT IMAGE - Loan-themed background -->
-      <div class="col-lg-6 cta-left-img"></div>
+      <!-- LEFT SIDE: Loan Request Form -->
+      <div class="col-lg-6 bg-light p-5 d-flex align-items-center">
+        <div class="w-100">
+          <h3 class="fw-bold mb-4 text-center text-lg-start">Apply Now – Quick & Easy</h3>
+          <p class="text-muted mb-4 text-center text-lg-start">Fill in your details and get callback in minutes!</p>
 
-      <!-- RIGHT CONTENT - Request Loan focus -->
+          <form id="loanRequestForm" class="row g-3">
+
+            <div class="col-md-6">
+              <label for="fullName" class="form-label fw-semibold">Full Name</label>
+              <input type="text" class="form-control" id="fullName" placeholder="Enter your name" required>
+            </div>
+
+            <div class="col-md-6">
+              <label for="phone" class="form-label fw-semibold">Mobile Number</label>
+              <input type="tel" class="form-control" id="phone" placeholder="+91 98765 43210" required pattern="[0-9]{10}">
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label fw-semibold">Email Address</label>
+              <input type="email" class="form-control" id="email" placeholder="yourname@example.com" required>
+            </div>
+
+            <div class="col-md-6">
+              <label for="loanType" class="form-label fw-semibold">Loan Type</label>
+              <select class="form-select" id="loanType" required>
+                <option value="">Select Loan Type</option>
+                <option value="personal">Personal Loan</option>
+                <option value="business">Business Loan</option>
+                <option value="lap">Loan Against Property</option>
+                <option value="home">Home Loan</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <label for="amount" class="form-label fw-semibold">Required Amount (₹)</label>
+              <input type="number" class="form-control" id="amount" placeholder="e.g. 500000" min="10000" required>
+            </div>
+
+            <div class="col-12 mt-4">
+              <button type="submit" class="btn btn-warning btn-lg w-100 fw-bold">
+                Submit Request → Get Callback
+              </button>
+            </div>
+
+            <div class="col-12 mt-3">
+              <small class="text-muted d-block text-center">
+                We respect your privacy. Your details are safe with us.
+              </small>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE: Promotional Content -->
       <div class="col-lg-6 cta-right-content">
         <div class="cta-overlay-shape"></div>
 
         <div class="cta-content text-center text-lg-start">
-          <small class="cta-label">NEED CASH FAST?</small>
+          <small class="cta-label text-uppercase fw-bold">Instant Loan Approval</small>
 
-          <h3 class="cta-title mb-3">Request Your Loan Today!</h3>
+          <h2 class="cta-title mb-3 fw-bold">Request Your Loan Today!<br>Get Cash in 24–48 Hours</h2>
+
+          <p class="cta-subtitle mb-4">
+            ✓ No Collateral Needed (for Personal/Business Loans)<br>
+            ✓ Quick Approval | Minimal Documentation<br>
+            ✓ Loan Against Property | Personal | Business | Home
+          </p>
 
           <p class="cta-contact mb-4">
-            📞 <strong>+91 98765 43210</strong> &nbsp;&nbsp;|&nbsp;&nbsp;
-            ✉️ <strong>support@yourloansite.com</strong>
+            <span class="me-3">📞 <strong>+91 98765 43210</strong></span>
+            <span>✉️ <strong>loans@yourcompany.com</strong></span>
           </p>
 
-          <p class="cta-searches mb-4">
-            <strong>Popular Requests:</strong> Loan Against Property | Business Loan | Personal Loan | Quick Approval
+          <p class="cta-searches mb-5 small">
+            <strong>Most Requested:</strong> Loan Against Property | Personal Loan | Business Loan | Instant Approval
           </p>
 
-          <a href="#apply-form" class="cta-btn">Request Loan Now</a>
+          <a href="#loanRequestForm" class="cta-btn">Request Loan Now – Get Started</a>
         </div>
       </div>
 
@@ -188,91 +246,117 @@
     overflow: hidden;
   }
 
-  /* LEFT IMAGE - Updated for loan theme */
-  .cta-left-img {
-    background: url('images/slider-1-1.jpg') center/cover no-repeat;
-    min-height: 300px; /* Slightly taller for better balance */
-  }
-
   /* RIGHT PANEL */
   .cta-right-content {
     position: relative;
-    background: #ff9f43; /* Keep vibrant orange for attention */
+    background: linear-gradient(135deg, #ff9f43 0%, #ff6b35 100%);
     color: #fff;
-    padding: 60px 40px;
+    padding: 70px 50px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  /* DIAGONAL OVERLAY SHAPE */
   .cta-overlay-shape {
     position: absolute;
     top: 0;
-    right: -120px;
-    width: 260px;
+    right: -140px;
+    width: 300px;
     height: 100%;
     background: #0b7bc1;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 35% 100%);
   }
 
-  /* CONTENT */
   .cta-content {
     position: relative;
     z-index: 2;
-    max-width: 480px;
+    max-width: 520px;
   }
 
   .cta-label {
-    font-size: 12px;
-    letter-spacing: 1.5px;
+    font-size: 14px;
+    letter-spacing: 2px;
     opacity: 0.9;
-    text-transform: uppercase;
+    background: rgba(255,255,255,0.2);
+    padding: 6px 14px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-bottom: 12px;
   }
 
   .cta-title {
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 1.2;
+    font-size: 36px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .cta-subtitle {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 24px;
   }
 
   .cta-contact {
-    font-size: 18px;
-    margin: 15px 0;
+    font-size: 20px;
+    font-weight: 600;
   }
 
   .cta-searches {
-    font-size: 15px;
     opacity: 0.9;
   }
 
-  /* BUTTON - More prominent */
   .cta-btn {
-    background: #fff;
-    color: #ff5e00; /* Orange text for contrast */
+    background: #ffffff;
+    color: #ff5e00;
     border: none;
-    padding: 14px 32px;
-    font-size: 18px;
+    padding: 16px 40px;
+    font-size: 20px;
     font-weight: 700;
-    border-radius: 6px;
-    transition: all 0.3s ease;
+    border-radius: 50px;
+    transition: all 0.35s ease;
     text-decoration: none;
     display: inline-block;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
   }
 
   .cta-btn:hover {
     background: #0b7bc1;
-    color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  }
+
+  /* Form Styling */
+  .form-control, .form-select {
+    border-radius: 8px;
+    padding: 12px 16px;
+    border: 1px solid #ced4da;
+  }
+
+  .form-control:focus, .form-select:focus {
+    border-color: #ff9f43;
+    box-shadow: 0 0 0 0.25rem rgba(255,159,67,0.25);
   }
 
   @media (max-width: 991px) {
     .cta-right-content {
-      padding: 50px 30px;
+      padding: 60px 30px;
     }
     .cta-title {
+      font-size: 28px;
+    }
+    .cta-btn {
+      padding: 14px 36px;
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .cta-title {
       font-size: 24px;
+    }
+    section .p-5 {
+      padding: 3rem 1.5rem !important;
     }
   }
 </style>
